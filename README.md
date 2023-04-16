@@ -16,5 +16,5 @@ Once installed, the UI looks like:
 </p>
 
 ## 🤗 Acknowledgements
-- (Stable Diffusion WebUI)[https://github.com/AUTOMATIC1111/stable-diffusion-webui]
-- (SD WebUI extension for ControlNet and T2I-Adapter)[https://github.com/Mikubill/sd-webui-controlnet]
+- [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+- [SD WebUI extension for ControlNet and T2I-Adapter](https://github.com/Mikubill/sd-webui-controlnet)
