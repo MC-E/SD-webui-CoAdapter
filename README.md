@@ -1,5 +1,5 @@
 # SD-Webui Extension
-This repo is an SD-Webui extension for Composeable T2I-Adapter ([CoAdapter](https://github.com/TencentARC/T2I-Adapter)).
+This repo is a SD-Webui extension for Composeable T2I-Adapter ([CoAdapter](https://github.com/TencentARC/T2I-Adapter)).
 
 ## 🔧 Install
 - Install the [stable diffusion webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui).
@@ -14,6 +14,8 @@ Once installed, the UI looks like:
 <p align="center">
   <img src="assets/webui.PNG">
 </p>
+
+**Please check ``Enable'' box to activate the function of CoAdapter.**
 
 
 ## Demos
