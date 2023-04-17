@@ -1,4 +1,3 @@
-# hook function inspired by https://github.com/Mikubill/sd-webui-controlnet/blob/main/scripts/hook.py
 import torch
 import torch.nn as nn
 from modules import devices, lowvram, shared, scripts
@@ -54,10 +53,6 @@ class UnetHook(nn.Module):
         
     def hook(self, model):
         outer = self
-        
-        def guidance_schedule_handler(x):
-            current_sampling_percent = (x.sampling_step / x.total_sampling_steps)
-            self.control_params.guidance_stopped = (current_sampling_percent < self.control_params.cond_tau) and (self.control_params.enabled)
    
         def cfg_based_adder(base, x, require_autocast, is_adapter=False):
             if isinstance(x, float):
@@ -118,8 +113,10 @@ class UnetHook(nn.Module):
             assert timesteps is not None, ValueError(f"insufficient timestep: {timesteps}")
             hs = []
             with th.no_grad():
-                if not outer.control_params.guidance_stopped:
+                if ((timesteps[0]/1000. > 1- outer.control_params.cond_tau) and (outer.control_params.enabled))==False:
+                    print('set none', timesteps[0]/1000., outer.control_params.cond_tau)
                     outer.control_params.adapter_features = None
+
                 t_emb = cond_cast_unet(timestep_embedding(timesteps, self.model_channels, repeat_only=False))
                 emb = self.time_embed(t_emb) 
                 h = x.type(self.dtype)
@@ -149,14 +146,12 @@ class UnetHook(nn.Module):
                
         model._original_forward = model.forward
         model.forward = forward2.__get__(model, UNetModel)
-        scripts.script_callbacks.on_cfg_denoiser(guidance_schedule_handler)
     
     def notify(self, params, is_vanilla_samplers): 
         self.is_vanilla_samplers = is_vanilla_samplers
         self.control_params = params
 
     def restore(self, model):
-        scripts.script_callbacks.remove_current_script_callbacks()
         if hasattr(self, "control_params"):
             del self.control_params
         
