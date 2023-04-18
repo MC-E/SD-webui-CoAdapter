@@ -66,7 +66,7 @@ for cond_name in supported_cond:
     setattr(global_opt, f'{cond_name}_adapter_ckpt', f'models/T2I-Adapter/coadapter-{cond_name}-sd15v1.pth')
 global_opt.device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 global_opt.max_resolution = 512 * 512
-global_opt.resize_short_edge = None
+global_opt.resize_short_edge = 512 #None
 global_opt.sampler = 'ddim'
 global_opt.cond_weight = 1.0
 global_opt.C = 4
