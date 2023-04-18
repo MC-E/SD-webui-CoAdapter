@@ -20,7 +20,7 @@ Once installed, the UI looks like:
 **Remember to check ``Enable'' box to activate the function of CoAdapter.**
 1. Using functions in "txt2img" or "img2img" tab.
 2. Import the conditions you need into the window of Coadapter.
-3. Chosing a sampler in the "sampling method". Empirically, DDIM is all-right. 
+3. Choosing a sampler in the "sampling method". Empirically, DDIM is all-right. 
 4. For the output resolution, you can choose "Consistent with the condition map" or "Controlled by resize sliders". 
 
 ## ⏬ Download Models
