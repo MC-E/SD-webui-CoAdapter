@@ -1,4 +1,4 @@
-# SD-Webui Extension
+# SD-Webui-CoAdapter
 This repo is a SD-Webui extension for Composable T2I-Adapter ([CoAdapter](https://github.com/TencentARC/T2I-Adapter)).
 
 ## 🔧 Install
@@ -15,10 +15,18 @@ Once installed, the UI looks like:
   <img src="assets/webui.PNG">
 </p>
 
-**Please check ``Enable'' box to activate the function of CoAdapter.**
+## 💻 Usage
 
+**Remember to check ``Enable'' box to activate the function of CoAdapter.**
+1. Using functions in "txt2img" or "img2img" tab.
+2. Import the conditions you need into the window of Coadapter.
+3. Chosing a sampler in the "sampling method". Empirically, DDIM is all-right. 
+4. For the output resolution, you can choose "Consistent with the condition map" or "Controlled by resize sliders". 
 
-## Demos
+## ⏬ Download Models
+Pre-trained models are downloaded automatically from <https://huggingface.co/TencentARC/T2I-Adapter> and placed in the `models` folder. 
+
+## 🔥🔥🔥 Demos
 
 | Sketch                                                                                                                                    | Canny |                                                                   Depth                                                                   | Color (Spatial) | Style                                                                                                                                      | Results |
 |:------------------------------------------------------------------------------------------------------------------------------------------|:-----:|:-----------------------------------------------------------------------------------------------------------------------------------------:|:---------------:|--------------------------------------------------------------------------------------------------------------------------------------------|---------|
@@ -31,3 +39,4 @@ Once installed, the UI looks like:
 ## 🤗 Acknowledgements
 - [Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 - [SD WebUI extension for ControlNet and T2I-Adapter](https://github.com/Mikubill/sd-webui-controlnet)
+- [Composer](https://github.com/damo-vilab/composer)
