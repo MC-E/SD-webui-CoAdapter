@@ -24,7 +24,13 @@ Once installed, the UI looks like:
 4. For the output resolution, you can choose "Consistent with the condition map" or "Controlled by resize sliders". 
 
 ## ⏬ Download Models
-Pre-trained models are downloaded automatically from <https://huggingface.co/TencentARC/T2I-Adapter> and placed in the `models` folder. 
+### Linux
+Pre-trained models are downloaded automatically from <https://huggingface.co/TencentARC/T2I-Adapter> and placed in the "stable-diffusion-webui\extensions\T2I-Adapter\models" folder. 
+
+### Windows
+Downloading models from T2I-Adapter model zoom: https://github.com/TencentARC/T2I-Adapter/blob/main/docs/AdapterZoo.md
+
+**Put models in your "stable-diffusion-webui\extensions\T2I-Adapter\models".
 
 ## 🔥🔥🔥 Demos
 
